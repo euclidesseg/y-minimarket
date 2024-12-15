@@ -1,42 +1,37 @@
-<div id="menu" class="bg-[#d9d9d9] min-h-screen text-slate-300 w-64 left-0 h-screen overflow-y-auto">
-  
-    <div id="profile" class="px-6 py-10">
-      <a href="#" class="inline-flex space-x-2 items-center">
-        <img src="assets/icons/icon-y-minimarket.svg" alt="">
-      </a>
+<div id="menu" class="bg-[#d9d9d9] dark:bg-[#1f2937] min-h-screen text-slate-300 dark:text-white w-64 left-0 h-screen overflow-y-auto">
+  <div id="profile" class="px-6 py-10">
+    <a href="#" class="inline-flex space-x-2 items-center">
+      <img src="assets/icons/icon-y-minimarket.svg" alt="">
+    </a>
+  </div>
+  <div class="px-6 py-10 relative">
+    <div class="bg-[#d9d9d9] dark:bg-gray-800 shadow-inner p-2 shadow-[#7a7878] dark:shadow-gray-700 w-full rounded-lg outline-none text-black dark:text-white flex gap-2">
+      <img src="assets/icons/icono-buscador.svg" alt="">
+      <input type="text" class="w-full text-inherit bg-[#d9d9d9] dark:bg-gray-800 outline-none">
     </div>
-    <div class="px-6 py-10 relative">
-      <div class="bg-[#d9d9d9] shadow-inner p-2 shadow-[#7a7878] w-full rounded-lg outline-none text-black flex gap-2">
-        <img src="assets/icons/icono-buscador.svg" alt="">
-        <input type="text" class="w-full text-inherit bg-[#d9d9d9] outline-none">
-      </div>
-    </div>
-    <div id="nav" class="w-full px-6">
-  
-  
-      <!-- el elemento track es una bandera que nos creaa el siclo for para decir como poderle dar seguimiento a los elementos
-        $index vendria a indicar que le vamos a dar seguimiendo al indice del elemento actual tambien podriamos colocar el item
-      -->
-      @for (item of menuItems; track $index ) {
-        <a
+  </div>
+  <div id="nav" class="w-full px-6">
+    @for (item of menuItems; track $index ) {
+      <a
         [routerLink]="item.path"
-        routerLinkActive="bg-[#fff7f7] rounded-lg shadow-lg"
-        href="#" class="w-full px-2 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150">
-          <div class="flex flex-col">
-            <span class="text-lg leading-5 text-black">{{item.title}}</span>
-          </div>
-        </a>
-      }
+        routerLinkActive="bg-[#fff7f7] dark:bg-gray-700 rounded-lg shadow-lg"
+        href="#" 
+        class="w-full px-2 inline-flex space-x-2 items-center py-3 hover:bg-white/5 dark:hover:bg-gray-600 transition ease-linear duration-150">
+        <div class="flex flex-col">
+          <span class="text-lg leading-5 text-black dark:text-white">{{item.title}}</span>
+        </div>
+      </a>
+    }
 
-      <div class="py-4 w-full h-auto flex gap-4 flex-col mt-12">
-        <div class="w-full h-12">
-            <button [routerLink]="['/auth']" type="button" class="border text-black p-2 border-black rounded-lg block w-full">Salir</button>
-        </div>
-        <div class="p-2 relative bg-[#d9d9d9] shadow-inner shadow-[#7a7878] w-full rounded-lg outline-none text-black flex gap-4 items-center justify-center">
-          <button type="button" class="border border-black rounded-lg block w-1/2"   > Oscuro</button>
-          <button type="button" class="p-1 shadow-md shadow-[#7a7878] w-1/2 rounded-lg"> Claro</button>
-        </div>
+    <div class="py-4 w-full h-auto flex gap-4 flex-col mt-12">
+      <div class="w-full h-12">
+        <button [routerLink]="['/auth']" type="button" 
+                class="border text-black dark:text-white p-2 border-black dark:border-white rounded-lg block w-full">Salir</button>
+      </div>
+      <div class="p-2 relative bg-[#d9d9d9] dark:bg-gray-800 shadow-inner shadow-[#7a7878] dark:shadow-gray-700 w-full rounded-lg outline-none text-black dark:text-white flex gap-4 items-center justify-center">
+        <button type="button" class="border border-black dark:border-white rounded-lg block w-1/2" (click)="toggleDarkMode()"> Oscuro</button>
+        <button type="button" class="p-1 shadow-md shadow-[#7a7878] dark:shadow-gray-700 w-1/2 rounded-lg" (click)="toggleDarkMode()"> Claro</button>
       </div>
     </div>
   </div>
-  
+</div>
