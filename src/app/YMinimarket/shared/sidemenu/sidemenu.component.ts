@@ -16,7 +16,7 @@ export class SidemenuComponent {
         //  elimina un nivel de anidamiento de los arrays, es decir, toma un array que contiene arrays y 
         //  devuelve un nuevo array que contiene todos los elementos de esos sub-arrays.
   .filter(route => route && route.path) // filtrar que si tenga una ruta y que la ruta tenga su direccion
-  .filter(route => !route.path?.includes(':')) // dejamos fuera a la ruta que necesita un id
+  .filter(route => !route.path?.includes(':') && route.path !== 'login') // dejamos fuera a la ruta que necesita un id
   constructor(){
     console.log(this.menuItems);
   }

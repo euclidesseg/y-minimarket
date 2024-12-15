@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-reportes',
   standalone: true,
   imports: [],
-  template: `<p>reportes works!</p>`,
+  templateUrl: './reportes.component.html',
   styles: `
     :host {
       display: block;
